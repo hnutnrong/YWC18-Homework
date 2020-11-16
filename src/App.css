@@ -10,3 +10,26 @@
 .topichead{
   color:white
 }
+
+/* .img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+} */
+
+.leftcard{
+  background-color: #FFFFFF;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-color: #AFB9C6;
+}
+
+.cardbody{
+  background-color: #FFFFFF;
+  border: 1px solid;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border-color: #D0E0E9;
+}
