@@ -10,20 +10,24 @@ class App extends Component {
   render() {
     return (
       <div>
+        
         <div className="row col-12 m-0 p-0 top ">
           <div className="col-1"></div>
           <div className="col-10 py-3">
             <div class="input-group">
               <img src={Image} width="150px" alt="headlogo"></img>
               <div className="input-group-prepend pl-4">
+              
                 <button
                   className="btn btn-outline-secondary dropdown-toggle"
                   type="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
-                  aria-expanded="false"
+                  aria-expanded="false"    
                 >
-                  พื้นที่ใกล้ฉัน
+               
+               <i class="fa fa-map-marker" aria-hidden="true"></i>
+               พื้นที่ใกล้ฉัน
                   <span className="pl-5"></span>
                 </button>
                 {/* <div className="dropdown-menu">

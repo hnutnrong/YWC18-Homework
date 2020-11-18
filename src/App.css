@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 
+
+body{
+  background-image: url('./img/bg.png');
+  min-height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Prompt', sans-serif;
+}
 .top{
   background-color:white;
 }
