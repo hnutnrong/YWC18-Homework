@@ -14,12 +14,12 @@ class LeftCard extends Component {
                 <span className="shoptype">ประเภทร้านค้า</span>
               </div>
               <div className="selecttypeshop">
-              {/* <Filter type="ทั้งหมด"></Filter>
+              <Filter type="ทั้งหมด"></Filter>
               <Filter type="ร้านอาหารและเครื่องดื่ม"></Filter>
               <Filter type="ร้านค้า OTOP"></Filter>
               <Filter type="ร้านธงฟ้า"></Filter>
-              <Filter type="สินค้าทั่วไป"></Filter> */}
-              <Filter></Filter>
+              <Filter type="สินค้าทั่วไป"></Filter>
+    
 
               </div>
               <div className="pt-4 province">

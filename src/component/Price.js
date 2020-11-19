@@ -11,7 +11,7 @@ class Price extends Component {
   }
   componentDidMount() {
     api.get().then((result) => {
-      console.log(result);
+      // console.log(result);
       this.setState({
         price: result.data.priceRange,
         

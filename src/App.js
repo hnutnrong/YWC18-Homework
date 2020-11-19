@@ -20,7 +20,6 @@ class App extends Component {
   }
   componentDidMount() {
     api.get().then((result) => {
-      console.log(result);
       this.setState({
         shop: result.data.merchants,
         

@@ -21,7 +21,7 @@ class Body extends Component {
               <span className="shopname pr-3">{this.props.shopname}</span>
               <span className=" px-2">{this.props.status}</span>
             </div>
-            <div className="pt-2">
+            <div className="pt-2 explainshop">
               {this.props.shoptype}
               <span className="pl-3">|</span>
               <span className="pl-3">{this.props.levelprice}</span>
