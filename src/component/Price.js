@@ -1,18 +1,38 @@
 import React, { Component } from "react";
+import api from "../utils/api";
 
 class Price extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      price: [],
+    };
+  }
+  componentDidMount() {
+    api.get().then((result) => {
+      console.log(result);
+      this.setState({
+        price: result.data.priceRange,
+        
+      });
+    });
+  }
   render(props) {
     return (
       <div>
         <div className="">
           
-             <select className="select custom-select custom-select-sm">
-                        <option>กรุณาเลือก</option>
-                        <option value="1">ไม่เกิน 100 บาท</option>
-                        <option value="2">100 - 300 บาท</option>
-                        <option value="3">300 - 600 บาท</option>
-                        <option value="4">มากกว่า 600 บาท</option>
-                      </select>
+             <select className="select custom-select custom-select-sm"> 
+             {this.state.price.map((prices) => {
+                  return <option>{prices}</option>;
+                })}
+                      </select> 
+
+
+            
+
+               
 
             
             

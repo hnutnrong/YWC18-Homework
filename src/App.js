@@ -15,19 +15,18 @@ class App extends Component {
     super(props);
     this.state = {
       shop: [],
+      
     };
   }
-componentDidMount(){
-  api.get()
-  .then((result)=>{
-    console.log(result.data.merchants)
-    this.setState({
-      shop:result.data.merchants
-    })
-  })
-  
-}
-  
+  componentDidMount() {
+    api.get().then((result) => {
+      console.log(result);
+      this.setState({
+        shop: result.data.merchants,
+        
+      });
+    });
+  }
 
   render() {
     return (
@@ -95,85 +94,28 @@ componentDidMount(){
 
             <div className="col-sm-12 col-md-9 p-0 m-0 pl-2 pr-3 ">
               <div className="pb-2">
-
-              {this.state.shop.map((shop) => {
-                  return ;
+                {this.state.shop.map((shop) => {
+                  return (
+                    <Body
+                      picshop={shop.coverImageId}
+                      alt="..."
+                      class="rounded float-left"
+                      shopname={shop.shopNameTH}
+                      shoptype={shop.subcategoryName}
+                      levelprice={shop.priceLevel}
+                      ratelevel="฿฿฿"
+                      province={shop.addressDistrictName}
+                      city={shop.addressProvinceName}
+                      describe={shop.highlightText}
+                      recommend={shop.recommendedItems}
+                      facilities={shop.facilities}
+                    ></Body>
+                  );
                 })}
-
-                <Body
-                  picshop="https://images.unsplash.com/photo-1597227772909-a6d166b48b79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                  alt="..."
-                  class="rounded float-left"
-                  shopname="Kanysorn Cafe"
-                  shoptype="สินค้า และ บริการ เกี่ยวกับการตกแต่งบ้าน"
-                  levelprice="฿"
-                  ratelevel="฿฿฿"
-                  province="เขตธนบุรี กรุงเทพมหานคร"
-                  describe="<strong>ร้านทุกอย่าง</strong> โต๊ะ ตู้ เตียง"
-                  recommend="แจกัน, จานชาม, เก้าอี้สามขา"
-                  car={CarImage}
-                ></Body>
               </div>
 
               <div className="pb-2">
-                {/* <Body
-                  picshop="https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
-                  alt="..."
-                  class="rounded float-left"
-                  shopname="Wiput Shop"
-                  shoptype="ร้านขายเสื้อผ้า / เครื่องประดับ / สินค้าแฟชั่น"
-                  levelprice="฿฿"
-                  ratelevel="฿฿"
-                  province="เขตพระนคร กรุงเทพมหานคร"
-                  describe="Custom Keyboard By <strong>Wiput</strong>, จัดจำหน่าย Keychron ทุกรุ่น"
-                  recommend=" Keychron K2, Keychron K4"
-                  car={CarImage}
-                ></Body>
-              </div>
-              <div className="pb-2">
-                <Body
-                  picshop="https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                  alt="..."
-                  class="rounded float-left"
-                  shopname="YWC Shop"
-                  shoptype="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"
-                  levelprice="฿฿฿฿"
                 
-                  province="เขตพระนคร กรุงเทพมหานคร"
-                  describe="ร้านนี้ไม่ค่อยมีอะไรขาย เน้นขายขำเป็นหลัก <strong>มีที่จอดรถ</strong>"
-                  recommend="กาแฟสด, ขนมปังปิ้ง, ข้าวไข่เจียวแหนม"
-                  car={CarImage}
-                ></Body>
-              </div>
-              <div className="pb-2">
-                <Body
-                  picshop="https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80"
-                  alt="..."
-                  class="rounded float-left"
-                  shopname="Chayanon Cafe"
-                  shoptype="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"
-                  levelprice="฿฿฿"
-                  ratelevel="฿"
-                  province="เขตลาดกระบัง กรุงเทพมหานคร"
-                  describe="<strong>ร้านกาแฟสด</strong> ดริปเองโดยบาริสต้าชื่อดังระดับประเทศ"
-                  recommend="กาแฟสด, ขนมปังปิ้ง"
-                  car={CarImage}
-                ></Body>
-              </div>
-              <div className="pb-2">
-                <Body
-                  picshop="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                  alt="..."
-                  class="rounded float-left"
-                  shopname="วายดับบลิวซีหมูกระทะ"
-                  shoptype="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"
-                  levelprice="฿฿฿"
-                  ratelevel="฿"
-                  province="เขตธนบุรี กรุงเทพมหานคร"
-                  describe="สด สะอาด <strong>ราคาเป็นมิตร</strong> จนต้องมากินซ้ำ"
-                  recommend="หมูกระทะ, สุกี้"
-                  car={CarImage}
-                ></Body> */}
               </div>
             </div>
           </div>
