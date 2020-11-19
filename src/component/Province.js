@@ -1,6 +1,24 @@
+import Axios from "axios";
 import React, { Component } from "react";
+import api from "../utils/api";
 
 class Province extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      provinces: [],
+    };
+  }
+  componentDidMount() {
+    api.get().then((result) => {
+      // result.data.provinces
+      this.setState({
+        provinces: result.data.provinces,
+      });
+      // console.log(this.state.provinces)
+    });
+  }
+
   render(props) {
     return (
       <div>
@@ -11,28 +29,13 @@ class Province extends Component {
                 <option disabled selected hidden value="">
                   พื้นที่ใกล้ฉัน
                 </option>
-                <option value="1">กรุงเทพมหานคร</option>
-                <option value="2">สมุทรปราการ</option>
-                <option value="3">นนทบุรี</option>
-                <option value="4">ปทุมธานี</option>
-                <option value="5">พระนครศรีอยุธยา</option>
-                <option value="6">อ่างทอง</option>
-                <option value="7">ลพบุรี</option>
-                <option value="8">สิงห์บุรี</option>
-                <option value="9">ชัยนาท</option>
-                <option value="10">สระบุรี</option>
-                <option value="11">ชลบุรี</option>
-                <option value="12">ระยอง</option>
-                <option value="13">จันทบุรี</option>
-                <option value="14">ตราด</option>
-                <option value="15">ฉะเชิงเทรา</option>
-                <option value="16">ปราจีนบุรี</option>
-                <option value="17">นครนายก</option>
-                <option value="18">สระแก้ว</option>
-                <option value="19">นครราชสีมา</option>
-                <option value="20">บุรีรัมย์</option>
-               
 
+                {this.state.provinces.map((province) => {
+                  return <option>{province}</option>;
+                })}
+
+               
+               
               </select>
             </div>
           </div>

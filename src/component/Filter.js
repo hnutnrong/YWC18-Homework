@@ -4,10 +4,10 @@ class Filter extends Component {
   render(props) {
     return (
       <div>
-        <div className="">
+        
        
          
-          <div class="form-check">
+          <div class="form-check py-1">
             <input
               className="form-check-input"
               type="radio"
@@ -22,7 +22,7 @@ class Filter extends Component {
 
             
             
-          </div>
+        
         </div>
       </div>
     );

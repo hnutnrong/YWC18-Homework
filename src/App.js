@@ -1,50 +1,54 @@
-import React, { Component } from "react";
+import React, { Component, isValidElement } from "react";
 import "./App.css";
 import Image from "./img/logo.png";
-import ImageBG from "./img/bg.png";
+import CarImage from "./img/car.png";
 import Filter from "./component/Filter";
 import Body from "./component/Body";
-import Province from "./component/Province"
+import Province from "./component/Province";
+import Price from "./component/Price";
+import LeftCard from "./component/LeftCard";
+import Header from "./component/Header";
+import api from "./utils/api";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shop: [],
+    };
+  }
+componentDidMount(){
+  api.get()
+  .then((result)=>{
+    console.log(result.data.merchants)
+    this.setState({
+      shop:result.data.merchants
+    })
+  })
+  
+}
+  
+
   render() {
     return (
       <div>
-        
-        <div className="row col-12 m-0 p-0 top ">
-          <div className="col-1"></div>
+        {/* <div className="row col-12 m-0 p-0 top ">
+          <div className="col-1 p-0 m-0"></div>
           <div className="col-10 py-3">
             <div class="input-group">
               <img src={Image} width="150px" alt="headlogo"></img>
               <div className="input-group-prepend pl-4">
-              
                 <button
                   className="btn btn-outline-secondary dropdown-toggle"
                   type="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
-                  aria-expanded="false"    
+                  aria-expanded="false"
                 >
-               
-               <i class="fa fa-map-marker" aria-hidden="true"></i>
-               พื้นที่ใกล้ฉัน
+                  <i className="fa fa-map-marker pr-2" aria-hidden="true"></i>
+                  พื้นที่ใกล้ฉัน
                   <span className="pl-5"></span>
                 </button>
-                {/* <div className="dropdown-menu">
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Something else here
-                </a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                  Separated link
-                </a>
-              </div> */}
               </div>
               <input
                 type="text"
@@ -61,95 +65,116 @@ class App extends Component {
                 </button>
               </div>
             </div>
+
+ 
           </div>
 
           <div className="col-1"></div>
-        </div>
+        </div> */}
+
+        <Header></Header>
 
         <div className="row col-12 m-0 p-0 title">
           <div className="col-1 p-0 m-0"></div>
           <div className="py-2">
             <span className="topichead pl-3 ">หน้าแรก / ค้นหา</span>
           </div>
-          <div className="col-2"></div>
+          <div className="col-2 p-0 m-0"></div>
         </div>
-        <div className="pt-4 pb-5 pl-4">
-          <span className="topicresult">
-            ผลการค้นหา ร้านอาหารและเครื่องดื่ม ทั้งหมด
-          </span>
-          <div className="row col-12 p-0 m-0 pt-5 ">
-            <div className="col-3 pt-3 pl-3 p-0 m-0 leftcard">
-              <div className="pb-3">
-                <span className="">ประเภทร้านค้า</span>
-              </div>
-              <Filter type="ทั้งหมด"></Filter>
-              <Filter type="ร้านอาหารและเครื่องดื่ม"></Filter>
-              <Filter type="ร้านค้า OTOP"></Filter>
-              <Filter type="ร้านธงฟ้า"></Filter>
-              <Filter type="สินค้าทั่วไป"></Filter>
 
-              <div className="pt-5">
-                จังหวัด/ใกล้ฉัน
-                <div>
-                 
-                  <Province></Province>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                ราคา
-                <div>
-                  <div className="row col-12 p-0 m-0">
-                    <div className="col-10 p-0 m-0 pt-2">
-                      <select className="select custom-select custom-select-sm">
-                        <option>กรุณาเลือก</option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 pb-2">
-                <span className="">ประเภทร้านอาหารและเครื่องดื่ม</span>
-              </div>
-              <div className="pt-2">
-                <Filter type="ทั้งหมด"></Filter>
-                <Filter type="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"></Filter>
-                <Filter type="ก๋วยเตี๋ยว ก๋วยจั๊บ"></Filter>
-                <Filter type="ชาบู สุกี้ยากี้ หม้อไฟ"></Filter>
-                <Filter type="ปิ้งย่าง หมูกะท"></Filter>
-                <Filter type="ของหวาน ไอศกรีม เบเกอรี่ เครื่องดื่ม"></Filter>
-                <Filter type="ผับ ร้านเหล้า บาร์"></Filter>
-                <Filter type="ร้านขายผลไม้ / ร้านขายผัก"></Filter>
-                <Filter type="ร้านอาหารอีสาน"></Filter>
-                <Filter type="ร้านอาหารญี่ปุ่น"></Filter>
-                <Filter type="ข้าวต้ม โจ๊ก เกาเหลา"></Filter>
-                <Filter type="คาราโอเกะ"></Filter>
-                <Filter type="บุฟเฟ่ต์"></Filter>
-                <Filter type="บุฟเฟ่ต์โรงแรม"></Filter>
-                <Filter type="พิซซ่า ฟาสต์ฟู้ด จานด่วน"></Filter>
-                <Filter type="อาหารเกาหลี"></Filter>
-                <Filter type="อาหารจีน"></Filter>
-                <Filter type="อาหารเจ มังสวิรัติ สุขภาพ"></Filter>
-                <Filter type="อาหารใต้"></Filter>
-                <Filter type="อาหารทะเล"></Filter>
-                <Filter type="อาหารนานาชาติ"></Filter>
-                <Filter type="อาหารมุสลิม อิสลาม"></Filter>
-                <Filter type="อาหารเวียดนาม"></Filter>
-                <Filter type="อาหารอินเดีย"></Filter>
-                <Filter type="อาหารเหนือ"></Filter>
-                <Filter type="อาหารว่าง ขนม ของกินเล่น"></Filter>
-                <Filter type="อื่นๆ"></Filter>
-                <div className="pb-3"></div>
-              </div>
+        <div className="pt-4 pb-5 px-2">
+          <div className=" pl-3">
+            <span className="topicresult">
+              ผลการค้นหา ร้านอาหารและเครื่องดื่ม ทั้งหมด
+            </span>
+          </div>
+          <div className="row col-12  p-0 m-0 pt-5 ">
+            <div className="col-sm-3 col-md-3 display">
+              <LeftCard></LeftCard>
             </div>
 
-            <div className="col-9">
-                <Body image={ImageBG}></Body>
-              
+            <div className="col-sm-12 col-md-9 p-0 m-0 pl-2 pr-3 ">
+              <div className="pb-2">
+
+              {this.state.shop.map((shop) => {
+                  return ;
+                })}
+
+                <Body
+                  picshop="https://images.unsplash.com/photo-1597227772909-a6d166b48b79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                  alt="..."
+                  class="rounded float-left"
+                  shopname="Kanysorn Cafe"
+                  shoptype="สินค้า และ บริการ เกี่ยวกับการตกแต่งบ้าน"
+                  levelprice="฿"
+                  ratelevel="฿฿฿"
+                  province="เขตธนบุรี กรุงเทพมหานคร"
+                  describe="<strong>ร้านทุกอย่าง</strong> โต๊ะ ตู้ เตียง"
+                  recommend="แจกัน, จานชาม, เก้าอี้สามขา"
+                  car={CarImage}
+                ></Body>
+              </div>
+
+              <div className="pb-2">
+                {/* <Body
+                  picshop="https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
+                  alt="..."
+                  class="rounded float-left"
+                  shopname="Wiput Shop"
+                  shoptype="ร้านขายเสื้อผ้า / เครื่องประดับ / สินค้าแฟชั่น"
+                  levelprice="฿฿"
+                  ratelevel="฿฿"
+                  province="เขตพระนคร กรุงเทพมหานคร"
+                  describe="Custom Keyboard By <strong>Wiput</strong>, จัดจำหน่าย Keychron ทุกรุ่น"
+                  recommend=" Keychron K2, Keychron K4"
+                  car={CarImage}
+                ></Body>
+              </div>
+              <div className="pb-2">
+                <Body
+                  picshop="https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                  alt="..."
+                  class="rounded float-left"
+                  shopname="YWC Shop"
+                  shoptype="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"
+                  levelprice="฿฿฿฿"
+                
+                  province="เขตพระนคร กรุงเทพมหานคร"
+                  describe="ร้านนี้ไม่ค่อยมีอะไรขาย เน้นขายขำเป็นหลัก <strong>มีที่จอดรถ</strong>"
+                  recommend="กาแฟสด, ขนมปังปิ้ง, ข้าวไข่เจียวแหนม"
+                  car={CarImage}
+                ></Body>
+              </div>
+              <div className="pb-2">
+                <Body
+                  picshop="https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80"
+                  alt="..."
+                  class="rounded float-left"
+                  shopname="Chayanon Cafe"
+                  shoptype="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"
+                  levelprice="฿฿฿"
+                  ratelevel="฿"
+                  province="เขตลาดกระบัง กรุงเทพมหานคร"
+                  describe="<strong>ร้านกาแฟสด</strong> ดริปเองโดยบาริสต้าชื่อดังระดับประเทศ"
+                  recommend="กาแฟสด, ขนมปังปิ้ง"
+                  car={CarImage}
+                ></Body>
+              </div>
+              <div className="pb-2">
+                <Body
+                  picshop="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                  alt="..."
+                  class="rounded float-left"
+                  shopname="วายดับบลิวซีหมูกระทะ"
+                  shoptype="อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว"
+                  levelprice="฿฿฿"
+                  ratelevel="฿"
+                  province="เขตธนบุรี กรุงเทพมหานคร"
+                  describe="สด สะอาด <strong>ราคาเป็นมิตร</strong> จนต้องมากินซ้ำ"
+                  recommend="หมูกระทะ, สุกี้"
+                  car={CarImage}
+                ></Body> */}
+              </div>
             </div>
           </div>
         </div>
