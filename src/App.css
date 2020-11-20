@@ -178,3 +178,36 @@ body {
 .greyprice{
   color:rgb(153, 153, 153);
 }
+
+.headFilter{
+  font-size: 24px;
+  font-weight: bold;
+  color:#ffffff;
+
+}
+.bghead{
+  background-color: #2A4365;
+}
+.backbtfilter{
+  font-size: 24px;
+  color:#ffffff;
+}
+.radiocheck{
+  font-size: 14px;
+
+}
+.bgfilterbody{
+  background-color: #ffffff;
+
+}
+.dat{
+  font-weight: normal;
+}
+.priceinput{
+  background-color: #ffffff;
+  border: 1px solid;
+  box-sizing: border-box;
+
+  border-color: #d0e0e9;
+}
+

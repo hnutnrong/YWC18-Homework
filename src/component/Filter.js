@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import api from "../utils/api";
+import FilterFood from "./FilterFood";
 class Filter extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       shoptype: [],
+      subcategories:[],
     };
   }
   componentDidMount() {
@@ -14,30 +15,50 @@ class Filter extends Component {
       this.setState({
         shoptype: result.data.categories,
       });
-      // console.log(result.data.categories)
+      // console.log(result)
     });
+  }
+
+  showCategory(key){
+    // console.log( this.state.shoptype[key].subcategories);
+   this.setState({
+    subcategories:this.state.shoptype[key].subcategories,
+   })
   }
 
   render(props) {
     return (
-      <div>
-          <div className="form-check py-1">
+      <div className="radiocheck"> 
+         <div className="form-check py-1">
             <input
-              className="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios1"
-              value="option1"
-            
-            />
-            <label className="form-check-label" >
-              {this.props.type}
-            </label>
+                className="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="exampleRadios1"
+                value="option1"
+              />
+             
+              <label className="form-check-label"> ทั้งหมด</label>
+           </div>
 
-            
-            
-        
-        </div>
+        {this.state.shoptype.map((type,key) => {
+          return (
+            <div className="form-check py-1">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="exampleRadios"
+                id="exampleRadios1"
+                value={key}
+                onClick={()=>this.showCategory(key)}
+                
+              />
+              <label className="form-check-label">{type.name}</label>
+      
+    
+            </div>
+          );
+        })}
       </div>
     );
   }

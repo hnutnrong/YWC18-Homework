@@ -9,7 +9,7 @@ import Price from "./component/Price";
 import LeftCard from "./component/LeftCard";
 import Header from "./component/Header";
 import api from "./utils/api";
-import Seemore from "./component/Seemore";
+import FilterMobile from "./component/FilterMobile";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class App extends Component {
   }
   componentDidMount() {
     api.get().then((result) => {
+      console.log(result)
       this.setState({
         shop: result.data.merchants,
       });
@@ -29,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div>
-
+        <FilterMobile/>
         <Header></Header>
 
         <div className="pt-4 pb-5 px-2">
@@ -54,7 +55,6 @@ class App extends Component {
                       shopname={shop.shopNameTH}
                       shoptype={shop.subcategoryName}
                       levelprice={shop.priceLevel}
-                      ratelevel="฿฿฿"
                       province={shop.addressDistrictName}
                       city={shop.addressProvinceName}
                       describe={shop.highlightText}
@@ -65,10 +65,15 @@ class App extends Component {
                 })}
               </div>
               <center>
+                
+
+            <div className="row col-12">
               <button type="button" className="">
                 <span>ดูเพิ่มเติม</span>
               </button>
+              </div>
               </center>
+              
             </div>
           </div>
         </div>

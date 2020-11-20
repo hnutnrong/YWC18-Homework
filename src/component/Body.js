@@ -19,7 +19,7 @@ class Body extends Component {
             </center>
           </div>
 
-          <div className="col-sm-6 col-md-10 pt-3 pl-3 p-0 m-0">
+          <div className="col-sm-6 col-md-10 pt-3 pl-3 p-0 m-0 pb-1">
             <div>
               <span className="shopname pr-3">{this.props.shopname}</span>
               <span className=" px-2">{this.props.status}</span>
