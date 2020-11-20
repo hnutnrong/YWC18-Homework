@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.c1e79ce1.chunk.css",
-    "main.js": "/static/js/main.8cd6564f.chunk.js",
-    "main.js.map": "/static/js/main.8cd6564f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.507e0ffb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.507e0ffb.js.map",
-    "static/css/2.ea9b1cc9.chunk.css": "/static/css/2.ea9b1cc9.chunk.css",
-    "static/js/2.2b4f8b3e.chunk.js": "/static/js/2.2b4f8b3e.chunk.js",
-    "static/js/2.2b4f8b3e.chunk.js.map": "/static/js/2.2b4f8b3e.chunk.js.map",
-    "static/js/3.9a126dcf.chunk.js": "/static/js/3.9a126dcf.chunk.js",
-    "static/js/3.9a126dcf.chunk.js.map": "/static/js/3.9a126dcf.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.ea9b1cc9.chunk.css.map": "/static/css/2.ea9b1cc9.chunk.css.map",
-    "static/css/main.c1e79ce1.chunk.css.map": "/static/css/main.c1e79ce1.chunk.css.map",
-    "static/js/2.2b4f8b3e.chunk.js.LICENSE.txt": "/static/js/2.2b4f8b3e.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/static/media/bg.ac869927.png"
+    "main.css": "/YWC18-Homework/static/css/main.7af3b61a.chunk.css",
+    "main.js": "/YWC18-Homework/static/js/main.8cd6564f.chunk.js",
+    "main.js.map": "/YWC18-Homework/static/js/main.8cd6564f.chunk.js.map",
+    "runtime-main.js": "/YWC18-Homework/static/js/runtime-main.977bdb44.js",
+    "runtime-main.js.map": "/YWC18-Homework/static/js/runtime-main.977bdb44.js.map",
+    "static/css/2.ea9b1cc9.chunk.css": "/YWC18-Homework/static/css/2.ea9b1cc9.chunk.css",
+    "static/js/2.2b4f8b3e.chunk.js": "/YWC18-Homework/static/js/2.2b4f8b3e.chunk.js",
+    "static/js/2.2b4f8b3e.chunk.js.map": "/YWC18-Homework/static/js/2.2b4f8b3e.chunk.js.map",
+    "static/js/3.9a126dcf.chunk.js": "/YWC18-Homework/static/js/3.9a126dcf.chunk.js",
+    "static/js/3.9a126dcf.chunk.js.map": "/YWC18-Homework/static/js/3.9a126dcf.chunk.js.map",
+    "index.html": "/YWC18-Homework/index.html",
+    "static/css/2.ea9b1cc9.chunk.css.map": "/YWC18-Homework/static/css/2.ea9b1cc9.chunk.css.map",
+    "static/css/main.7af3b61a.chunk.css.map": "/YWC18-Homework/static/css/main.7af3b61a.chunk.css.map",
+    "static/js/2.2b4f8b3e.chunk.js.LICENSE.txt": "/YWC18-Homework/static/js/2.2b4f8b3e.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/YWC18-Homework/static/media/bg.ac869927.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.507e0ffb.js",
+    "static/js/runtime-main.977bdb44.js",
     "static/css/2.ea9b1cc9.chunk.css",
     "static/js/2.2b4f8b3e.chunk.js",
-    "static/css/main.c1e79ce1.chunk.css",
+    "static/css/main.7af3b61a.chunk.css",
     "static/js/main.8cd6564f.chunk.js"
   ]
 }
