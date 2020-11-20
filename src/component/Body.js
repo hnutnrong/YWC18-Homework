@@ -20,47 +20,56 @@ class Body extends Component {
           </div>
 
           <div className="col-sm-6 col-md-10 pt-3 pl-3 p-0 m-0 pb-1">
-            <div>
+            
               <span className="shopname pr-3">{this.props.shopname}</span>
-              <span className=" px-2">{this.props.status}</span>
-            </div>
+              <span className=" px-1 ">
+                {this.props.status == "Y" ? (
+                  <span className="status px-1">เปิดอยู่</span>
+                ) : (
+                  <span></span>
+                )}
+
+                {this.props.status == "N" ? (
+                  <span className="statusclose px-1">ปิดแล้ว</span>
+                ) : (
+                  <span></span>
+                )}
+              </span>
+         
             <div className="pt-2 explainshop">
               {this.props.shoptype}
               <span className="pl-2">|</span>
 
               <span className="pl-2">
-                        {this.props.levelprice == "1"  ? (
-                        <text className="blackprice">฿<text className="greyprice">฿฿฿</text></text>
-                        
-                      ) : (
-                        <span></span>
-                      )}
-                      {this.props.levelprice == "2"  ? (
-                        <text className="blackprice">฿฿<text className="greyprice">฿฿</text></text>
-                        
-                      ) : (
-                        <span></span>
-                      )}
-                      
-                      {this.props.levelprice == "3"  ? (
-                        <text className="blackprice">฿฿฿<text className="greyprice">฿</text></text>
-                        
-                      ) : (
-                        <span></span>
-                      )}
-                      
-                      {this.props.levelprice == "4"  ? (
-                      
-                        <text className="blackprice">฿฿฿฿</text>
-                      
-                      ) : (
-                        <span></span>
-                      )}
-                      
-                      
-                      
-                      </span>
-                      
+                {this.props.levelprice == "1" ? (
+                  <text className="blackprice">
+                    ฿<text className="greyprice">฿฿฿</text>
+                  </text>
+                ) : (
+                  <span></span>
+                )}
+                {this.props.levelprice == "2" ? (
+                  <text className="blackprice">
+                    ฿฿<text className="greyprice">฿฿</text>
+                  </text>
+                ) : (
+                  <span></span>
+                )}
+
+                {this.props.levelprice == "3" ? (
+                  <text className="blackprice">
+                    ฿฿฿<text className="greyprice">฿</text>
+                  </text>
+                ) : (
+                  <span></span>
+                )}
+
+                {this.props.levelprice == "4" ? (
+                  <text className="blackprice">฿฿฿฿</text>
+                ) : (
+                  <span></span>
+                )}
+              </span>
 
               <span className="pl-2">|</span>
               <span className="pl-2">{this.props.province}</span>
@@ -76,30 +85,29 @@ class Body extends Component {
               <div className="displayflex">
                 {this.props.facilities.map((facilitie) => {
                   return (
-                    <div className="facilities" 
-                    > 
-                      {facilitie == "ที่จอดรถ"  ? (
+                    <div className="facilities">
+                      {facilitie == "ที่จอดรถ" ? (
                         <img
                           src={CarImage}
-                          className="facilitiescircle" 
+                          className="facilitiescircle"
                           width="18px"
                         ></img>
                       ) : (
                         <div></div>
                       )}
-                       {facilitie == "สามารถนำสัตว์เลี้ยงเข้าได้"  ? (
+                      {facilitie == "สามารถนำสัตว์เลี้ยงเข้าได้" ? (
                         <img
                           src={PetImage}
-                          className="facilitiescircle" 
+                          className="facilitiescircle"
                           width="18px"
                         ></img>
                       ) : (
                         <div></div>
                       )}
-                       {facilitie == "รับจองล่วงหน้า"  ? (
+                      {facilitie == "รับจองล่วงหน้า" ? (
                         <img
                           src={BookImage}
-                          className="facilitiescircle" 
+                          className="facilitiescircle"
                           width="18px"
                         ></img>
                       ) : (
@@ -108,13 +116,10 @@ class Body extends Component {
 
                       {/* {facilitie} */}
                     </div>
-                   
-                   
                   );
                 })}
               </div>
             </div>
-            
           </div>
         </div>
       </div>

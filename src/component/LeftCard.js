@@ -4,7 +4,7 @@ import Filter from "./Filter";
 import Province from "./Province";
 import Price from "./Price";
 import api from "../utils/api";
-import FilterFood from "./FilterFood";
+
 
 class LeftCard extends Component {
   constructor(props) {

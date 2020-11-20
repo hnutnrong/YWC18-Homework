@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../utils/api";
-import FilterFood from "./FilterFood";
+
 class Filter extends Component {
   constructor(props) {
     super(props);

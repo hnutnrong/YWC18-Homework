@@ -109,6 +109,12 @@ body {
   font-size: 12px;
 }
 
+
+.statusclose {
+  background-color: #afb9c6;;
+  color: #ffffff;
+  font-size: 12px;
+}
 .underline {
   width: 65%;
   height: 1px;
@@ -211,3 +217,8 @@ body {
   border-color: #d0e0e9;
 }
 
+.buttonbg{
+  background-color:#ffffff;
+  width: 100%;
+  font-size:14px;
+}

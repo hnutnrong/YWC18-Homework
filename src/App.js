@@ -55,6 +55,7 @@ class App extends Component {
                       shopname={shop.shopNameTH}
                       shoptype={shop.subcategoryName}
                       levelprice={shop.priceLevel}
+                      status ={shop.isOpen}
                       province={shop.addressDistrictName}
                       city={shop.addressProvinceName}
                       describe={shop.highlightText}
@@ -68,9 +69,14 @@ class App extends Component {
                 
 
             <div className="row col-12">
-              <button type="button" className="">
-                <span>ดูเพิ่มเติม</span>
+              <div className="col-3">
+                
+              </div>
+              <div className="col-6 pt-3">
+              <button type="button" className="btn btn-lg buttonbg">
+                ดูเพิ่มเติม
               </button>
+              </div>
               </div>
               </center>
               
