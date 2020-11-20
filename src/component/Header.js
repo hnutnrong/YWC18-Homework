@@ -3,12 +3,53 @@ import Images from "../img/logo-mini.png";
 import Image from "../img/logo.png";
 import FilterImage from "../img/filter.png";
 import LeftCard from "./LeftCard";
+import FilterMobile from "./FilterMobile";
+import Filter from "./Filter";
+import { Drawer, Button } from 'antd';
 
 class MobileHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      provinces: [],
+      filtermobile:false,
+   
+    };
+    this.showFilterMobile = this.showFilterMobile.bind(this);
+    this.onClose = this.onClose.bind(this);
+  }
+
+  showFilterMobile() {
+    
+    this.setState({
+      filtermobile:true
+    })
+  }
+
+  onClose(){
+    this.setState({
+      filtermobile:false
+    })
+  }
   
 
   render(props) {
     return (
+      <>
+       <Drawer
+          
+          headerStyle={{ backgroundColor: '#2A4365', color: 'white' }}
+          placement="right"
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.filtermobile}
+          // getContainer={false}
+          style={{ position: 'absolute' }}
+          width="100%"
+        >
+             <FilterMobile back={this.onClose}></FilterMobile>
+        </Drawer>
+        
       <div>
         <div className="row col-12 m-0 p-0 top ">
           <div className="col pt-2 pl-3">
@@ -37,8 +78,12 @@ class MobileHeader extends Component {
             <img
               src={FilterImage}
               className="pt-3"
-            
+              onClick={this.showFilterMobile}
             ></img>
+            
+
+              
+          
           </div>
           <div className="row col-12 m-0 p-0 title">
             <div className="py-2">
@@ -47,7 +92,10 @@ class MobileHeader extends Component {
             <div className="col-2 p-0 m-0"></div>
           </div>
         </div>
+        
+       
       </div>
+      </>
     );
   }
 }

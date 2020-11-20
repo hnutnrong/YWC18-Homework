@@ -10,6 +10,7 @@ import LeftCard from "./component/LeftCard";
 import Header from "./component/Header";
 import api from "./utils/api";
 import FilterMobile from "./component/FilterMobile";
+import 'antd/dist/antd.css';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <FilterMobile/>
+        
         <Header></Header>
 
         <div className="pt-4 pb-5 px-2">
